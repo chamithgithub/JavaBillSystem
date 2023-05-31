@@ -20,6 +20,15 @@ public class viewForm extends javax.swing.JFrame {
         ITotal.getText()         
     });
     }
+    public void clear(){
+       IName.setText("");
+        IRate.setText("");
+        Iqty.setText("");
+        ITotal.setText("");
+    }
+    
+    
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -257,6 +266,7 @@ public class viewForm extends javax.swing.JFrame {
         ITotal.setText(Integer.toString(total));
         
         billToTable();
+        clear()
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
