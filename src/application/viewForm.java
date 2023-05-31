@@ -1,10 +1,24 @@
 package application;
 
+import javax.swing.table.DefaultTableModel;
+
 public class viewForm extends javax.swing.JFrame {
 
  
     public viewForm() {
         initComponents();
+    }
+    
+    public void billToTable(){
+        DefaultTableModel model = new DefaultTableModel();
+        model = (DefaultTableModel)Table.getModel();
+        
+        model.addRow(new Object[]{
+        IName.getText(),
+        IRate.getText(),
+        Iqty.getText(),
+        ITotal.getText()         
+    });
     }
 
     @SuppressWarnings("unchecked")
@@ -241,6 +255,8 @@ public class viewForm extends javax.swing.JFrame {
         total=rateNum*qtyNum;
         
         ITotal.setText(Integer.toString(total));
+        
+        billToTable();
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
