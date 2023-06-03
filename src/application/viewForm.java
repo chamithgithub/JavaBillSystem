@@ -35,9 +35,13 @@ public class viewForm extends javax.swing.JFrame {
         }
     }
     public void billChart(){
-        bill.setText("==============ABC SHOP=============\n"+
-                     "Contact Number | ++++++++++++++++++\n");
+        bill.setText("==============ABC SHOP=============\n"+"==============Kalutara=============\n"+
+                     "Contact Number | ++++++++++++++++++\n\n Product\tRate\tQty\tTotal\n\n");
         
+       // System.out.println(bill.getText());
+    }
+    public void bill(){
+        bill.setText(bill.getText()+IName.getText()+"\t"+IRate.getText()+"\t"+Iqty.getText()+"\t"+ITotal.getText()+"\n");
     }
     
     public void clear(){
@@ -177,17 +181,15 @@ public class viewForm extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jScrollPane3)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(subTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -315,6 +317,7 @@ public class viewForm extends javax.swing.JFrame {
         ITotal.setText(Integer.toString(total));
         
         billToTable();
+        bill();
         clear();
         
     }//GEN-LAST:event_jButton1ActionPerformed
