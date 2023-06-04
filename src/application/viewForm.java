@@ -1,5 +1,9 @@
 package application;
 
+import java.awt.print.PrinterException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class viewForm extends javax.swing.JFrame {
@@ -342,7 +346,12 @@ public class viewForm extends javax.swing.JFrame {
     }//GEN-LAST:event_ITotalActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        
+            try {
+                bill.print();
+            } catch (PrinterException ex) {
+                JOptionPane.showMessageDialog(null,"Can not print bill ...");
+            }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void subTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subTotalActionPerformed
